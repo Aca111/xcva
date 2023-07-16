@@ -18,6 +18,7 @@ RUN curl -L -H "Cache-Control: no-cache" -o /tmp/x.zip https://git.sr.ht/~bak96/
 #end 
 
 #install xray-reality
+RUN ls
 WORKDIR /root/
 COPY ./conf.docker.sh ./install.sh
 RUN sh install.sh
