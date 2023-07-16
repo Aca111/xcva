@@ -4,7 +4,7 @@ LABEL version="0.1"
 # Install dependencies
 RUN apk update
 RUN apk upgrade
-RUN apk add  curl unzip jq openssl qrencode unzip tzdata 
+RUN apk add  curl unzip jq openssl libqrencode unzip tzdata 
 RUN apk 
 RUN rm -rf /var/lib/apk/lists/*
 
