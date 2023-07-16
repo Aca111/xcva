@@ -11,7 +11,7 @@ RUN rm -rf /var/lib/apk/lists/*
 # Set the timezone
 
 # Install Xray-core
-RUN curl -L -H "Cache-Control: no-cache" -o /tmp/x.zip https://git.sr.ht/~bak96/c3d/tree/master/item/x.zip && \
+RUN curl -L -H "Cache-Control: no-cache" -o /tmp/x.zip https://git.sr.ht/~bak96/c3d/blob/master/x.zip && \
     unzip /tmp/x.zip -d /usr/bin/ && \
     rm /tmp/x.zip && \
     chmod +x /usr/bin/xray
