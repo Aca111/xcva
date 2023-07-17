@@ -1,5 +1,5 @@
 FROM alpine
-LABEL version="0.1"
+LABEL version="0.2"
  
 # Install dependencies
  
