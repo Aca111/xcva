@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Update package index and install dependenciessudo apk update
-sudo apk install jq openssl qrencode
+apk add jq openssl libqrencode
 
 # Extract the desired variables using jq
 name=$(jq -r '.name' config.json)
@@ -10,7 +10,7 @@ port=$(jq -r '.port' config.json)
 sni=$(jq -r '.sni' config.json)
 path=$(jq -r '.path' config.json)
 
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
+sh -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
 
 keys=$(xray x25519)
@@ -38,7 +38,7 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.shortIds += ["'$shortId'"]')
 
 echo "$newJson" | tee /usr/local/etc/xray/config.json >/dev/null
-systemctl restart xray
+rc-service xray restart
 
 echo "$url"
 
