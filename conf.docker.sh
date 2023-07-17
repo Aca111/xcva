@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 json=config.json
 
 keys=$(xray x25519)
@@ -15,9 +15,9 @@ newJson=$(echo "$json" | jq \
     '.inbounds[0].streamSettings.realitySettings.privateKey = $pk | 
      .inbounds[0].settings.clients[0].id = $uuid |
      .inbounds[0].streamSettings.realitySettings.shortIds += ["'$shortId'"]')
-echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
+echo "$newJson" | tee /usr/local/etc/xray/config.json >/dev/null
 
-sudo service xray restart
+rc-service xray restart
 
 
 echo "$url" >> /root/test.url
