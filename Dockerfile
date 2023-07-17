@@ -23,7 +23,7 @@ COPY ./conf.docker.sh ./install.sh
 RUN sh install.sh
 RUN qrencode -s 50 -o qr.png $(cat test.url)
 #end 
-
+CMD ["nginx", "-g", "daemon off;"]
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
 EXPOSE 443
