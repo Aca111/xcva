@@ -38,8 +38,8 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.privateKey = $pk |
      .inbounds[0].streamSettings.realitySettings.shortIds += ["'$shortId'"]')
 
-echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
-sudo systemctl restart xray
+echo "$newJson" | tee /usr/local/etc/xray/config.json >/dev/null
+systemctl restart xray
 
 echo "$url"
 
