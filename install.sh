@@ -1,7 +1,6 @@
- #!/bin/bash
+#!/bin/bash
 
-# Update package index and install dependencies
-sudo apk update
+# Update package index and install dependenciessudo apk update
 sudo apk install jq openssl qrencode
 
 # Extract the desired variables using jq
