@@ -28,3 +28,4 @@ RUN qrencode -s 50 -o qr.png $(cat test.url)
 #end 
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
+EXPOSE 443
