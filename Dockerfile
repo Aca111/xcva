@@ -5,7 +5,7 @@ LABEL version="0.1"
  
 RUN apk update
 RUN apk upgrade
-RUN apk add  curl unzip jq openssl libqrencode unzip tzdata 
+RUN apk add  curl unzip jq openssl libqrencode unzip tzdata openrc
 RUN rm -rf /var/lib/apk/lists/*
 
 # Set the timezone
