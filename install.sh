@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update package index and install dependenciessudo apk update
 sudo apk install jq openssl qrencode
